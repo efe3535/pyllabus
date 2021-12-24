@@ -47,7 +47,9 @@ def rmodd(x):
   return list(dict.fromkeys(x))
 
 def ders_command(update: Update, context: CallbackContext):
-    update.message.reply_text(f"Cantana koyman gerekenler: {rmodd(koyulacaklar)}\nCantandan cikarman gerekenler: {rmodd(cikarilacaklar)}")
+    koyulacaklar_formatted = "".join([x + "\n" for x in rmodd(koyulacaklar)])
+    cikarilacaklar_formatted = "".join([y + "\n" for y in rmodd(cikarilacaklar)])
+    update.message.reply_text(f"Cantana koyman gerekenler:\n {koyulacaklar_formatted}\nCantandan cikarman gerekenler:\n {cikarilacaklar_formatted}")
 
 # print(rmodd(koyulacaklar), rmodd(cikarilacaklar))
 
