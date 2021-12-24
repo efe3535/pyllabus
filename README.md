@@ -1,1 +1,3 @@
-# pyllabus
+# pyllabus, helps you at your syllabus's...
+
+Simple. Just run the Python file and add your API Key to ```APIKEY="blahblah"``` section at the code.
