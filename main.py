@@ -1,4 +1,7 @@
 from datetime import datetime
+from telegram import Update, ForceReply, update
+from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext
+from config import APIKEY
 
 f=open("classes.txt", "r")
 
@@ -43,5 +46,15 @@ for lesson in tomorrows_classes:
 def rmodd(x):
   return list(dict.fromkeys(x))
 
-# print(koyulacaklar + odd_k, cikarilacaklar + odd_c)
-print(rmodd(koyulacaklar), rmodd(cikarilacaklar))
+def ders_command(update: Update, context: CallbackContext):
+    update.message.reply_text(f"Cantana koyman gerekenler: {rmodd(koyulacaklar)}\nCantandan cikarman gerekenler: {rmodd(cikarilacaklar)}")
+
+# print(rmodd(koyulacaklar), rmodd(cikarilacaklar))
+
+updater = Updater(APIKEY)
+
+# Get the dispatcher to register handlers
+dispatcher = updater.dispatcher
+dispatcher.add_handler(CommandHandler("dersprogrami", ders_command))
+updater.start_polling()
+updater.idle()
