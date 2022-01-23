@@ -35,7 +35,7 @@ todays_classes = f.readlines()[4].split()
 try:
     f.seek(0)
     todays_classes = f.readlines()[dayindex].split()
-except IndexError: # Weekend, we need to use the  
+except IndexError: # Weekend
     f.seek(0)
     todays_classes = f.readlines()[4].split()
 
