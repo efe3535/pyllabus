@@ -1,6 +1,8 @@
 # pyllabus
 pyllabus, helps you at your syllabus's...
 
+### Dependencies first!
+Run `pip install python-telegram-bot` to install the needed library.
 ## Running
 * Copy `config.example.py` to `config.py` and change `APIKEY`'s value with your API key.
 * Change `classes.txt` according to your classes.
