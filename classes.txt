@@ -2,4 +2,4 @@ Matematik Matematik Edebiyat Fizik Fizik Secmeli_Ingilizce Din_Kulturu Cografya
 Edebiyat Edebiyat Matematik Ingilizce Ingilizce Saglik_Trafik Tarih Cografya
 Sos_Etk Biyoloji Biyoloji Tarih Rehberlik Matematik Almanca Proje
 Ingilizce Ingilizce Secmeli_Ingilizce Muzik Muzik Almanca Din Sos_Etk
-Kimya Kimya Beden Beden Edebiyat Edebiyat Matematik Matematik
+Kimya Kimya Edebiyat Edebiyat Matematik Matematik
