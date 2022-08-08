@@ -53,7 +53,6 @@ for lesson in todays_classes:
 for lesson in tomorrows_classes:
     if lesson not in todays_classes:
         koyulacaklar.append(lesson)
-gn = datetime.now().strftime("%A")
 def rmodd(x):
   return list(dict.fromkeys(x))
 def hprogram(update: Update, context: CallbackContext):
