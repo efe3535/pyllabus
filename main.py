@@ -15,7 +15,7 @@ days_and_indexes = {
     'Sunday':6
 }
 dayindex = days_and_indexes[datetime.now().strftime("%A")]
-
+dayst = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma"]
 tomorrows_classes = []
 
 try:
@@ -57,7 +57,9 @@ gn = datetime.now().strftime("%A")
 def rmodd(x):
   return list(dict.fromkeys(x))
 def hprogram(update: Update, context: CallbackContext):
-    j=f.read()
+    j=""
+    for i in range(0,5):
+        j+=dayst[i]+': '+f.readline()
     update.message.reply_text(f"Haftalık ders programı:\n{j}")
 def gprogram(update: Update, context: CallbackContext):
     for i in range(0, dayindex-2):
