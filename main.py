@@ -60,7 +60,7 @@ def hprogram(update: Update, context: CallbackContext):
     j=f.read()
     update.message.reply_text(f"Haftalık ders programı:\n{j}")
 def gprogram(update: Update, context: CallbackContext):
-    for i in range(0, dayindex-1):
+    for i in range(0, dayindex-2):
         f.readline()
     j = f.readline() 
     j = j.replace(' ', '\n')
