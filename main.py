@@ -14,7 +14,6 @@ days_and_indexes = {
     'Saturday':5,
     'Sunday':6
 }
-
 dayindex = days_and_indexes[datetime.now().strftime("%A")]
 
 tomorrows_classes = []
@@ -54,10 +53,19 @@ for lesson in todays_classes:
 for lesson in tomorrows_classes:
     if lesson not in todays_classes:
         koyulacaklar.append(lesson)
-
+gn = datetime.now().strftime("%A")
 def rmodd(x):
   return list(dict.fromkeys(x))
-
+def hprogram(update: Update, context: CallbackContext):
+    j=f.read()
+    update.message.reply_text(f"Haftalık ders programı:\n{j}")
+def gprogram(update: Update, context: CallbackContext):
+    for i in range(0, dayindex-1):
+        f.readline()
+    j = f.readline() 
+    j = j.replace(' ', '\n')
+    update.message.reply_text(f"Bu günün dersleri:\n{j}")
+        
 def ders_command(update: Update, context: CallbackContext):
     koyulacaklar_formatted = "".join([x  + "\n" for x in rmodd(koyulacaklar)])
     cikarilacaklar_formatted = "".join([y  + "\n" for y in rmodd(cikarilacaklar)])
@@ -70,5 +78,7 @@ updater = Updater(APIKEY)
 # Get the dispatcher to register handlers
 dispatcher = updater.dispatcher
 dispatcher.add_handler(CommandHandler("dersprogrami", ders_command))
+dispatcher.add_handler(CommandHandler("haftalikprogram", hprogram))
+dispatcher.add_handler(CommandHandler("gunlukprogram", gprogram))
 updater.start_polling()
 updater.idle()
